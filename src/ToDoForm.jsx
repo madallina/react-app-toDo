@@ -22,6 +22,6 @@ return(
             Add
         </button>
     </div>
-)
+);
 }
 export default ToDoForm;
