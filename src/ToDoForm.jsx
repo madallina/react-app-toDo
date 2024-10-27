@@ -1,27 +1,26 @@
 import { useState } from "react";
 
-function ToDoForm({addTask}){
-const [newTask, setNewTask]=useState("");
+function ToDoForm({ addTask }) {
+  const [newTask, setNewTask] = useState("");
 
-function handleInputChange(event){
+  function handleInputChange(event) {
     setNewTask(event.target.value);
-}
-function handleSubmit(){
+  }
+  function handleSubmit() {
     addTask(newTask);
     setNewTask("");
-}
-return(
-    <div>
-        <input 
+  }
+  return (
+    <div className="input-container">
+      <input
         type="text"
         placeholder="Enter your task here"
         value={newTask}
         onChange={handleInputChange}
-        />
-        <button onClick = {handleSubmit}>
-            Add
-        </button>
+        className="form-control"
+      />
+      <button type="button" className="btn btn-primary" onClick={handleSubmit}>Add</button>
     </div>
-);
+  );
 }
 export default ToDoForm;
