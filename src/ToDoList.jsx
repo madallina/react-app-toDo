@@ -41,6 +41,9 @@ function ToDoList() {
   return (
     <div className="to-do-list">
       <ToDoForm addTask={addTask} />
+      <div className="task-header">
+        <span className="task-header-title">Tasks</span>
+      </div>
       <ol>
         {tasks.map((task, index) => (
           <ToDoItem

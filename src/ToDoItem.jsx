@@ -1,12 +1,19 @@
 function ToDoItem({ task, index, deleteTask, moveTaskUp, moveTaskDown }) {
   return (
     <div>
-      <li>
-        <span>{task}</span>
-        <button type="button" className="btn btn-danger" onClick={() => deleteTask(index)}>Delete</button>
-        <button type="button" className="btn btn-warning" onClick={() => moveTaskUp(index)}>☝</button>
-        <button type="button" className="btn btn-warning" onClick={() => moveTaskDown(index)}>👇</button>
-      </li>
+      <ul className="task-item">
+        <span className="task-text">{task}</span>
+        <div className="task-actions">
+        <button type="button" className="btn btn-warning" onClick={() => moveTaskUp(index)}>
+        <i className="bi bi-arrow-up"></i>
+        </button>
+        <button type="button" className="btn btn-warning" onClick={() => moveTaskDown(index)}>
+        <i className="bi bi-arrow-down"></i>
+        </button>
+        <button type="button" className="btn btn-danger " onClick={() => deleteTask(index)}>Delete</button>
+
+        </div>
+      </ul>
     </div>
   );
 }
